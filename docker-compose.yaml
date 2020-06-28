@@ -33,7 +33,7 @@ services:
   grafana:
     image: grafana/grafana:7.0.3
     environment: 
-      - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app,nome_plugin1,nome_plugin2
+      - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app
     volumes:
       - /mnt/data-docker/grafana/data:/var/lib/grafana
     networks:

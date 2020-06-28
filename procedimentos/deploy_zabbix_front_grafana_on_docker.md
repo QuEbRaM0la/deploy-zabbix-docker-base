@@ -177,7 +177,7 @@ docker version
 ### Ativando modo swarm no host
 
 ```bash
-docker swarm init
+docker swarm init --advertise-addr 10.0.0.51
 ```
 
 ### Inspect de todas as redes do docker
@@ -280,13 +280,13 @@ for net in `docker network ls |grep -v NAME | awk '{print $2}'`;do ipam=`docker 
 
 ```bash
 cd ~/
-git clone https://github.com/jorgepretel/maratonazabbix.git
+git clone <URL DO SEU GIT>
 ```
 
 ### Inicianlizando a stack 
 
 ```bash
-cd maratonazabbix
+cd <NOME_DA_PASTA_CLONADA>
 sh grafana.sh
 docker stack deploy -c docker-compose.yaml maratonazabbix
 ```
