@@ -185,9 +185,9 @@ STRONG Length >= 8, numeric, mixed case, special characters and dictionary      
 Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 1
 Please set the password for root here.
 
-New password: M4r4t0n4Z4bb1x!
+New password: Z4bb1xCurs0!
 
-Re-enter new password: M4r4t0n4Z4bb1x!
+Re-enter new password: Z4bb1xCurs0!
 
 Estimated strength of the password: 100
 Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
@@ -237,10 +237,10 @@ All done!
 ```bash
 mysql -u root -p
 create database zabbix character set utf8 collate utf8_bin;
-create user 'zabbix'@'localhost' identified by '2Maratona@Zabbix';
+create user 'zabbix'@'localhost' identified by 'Zabbix5@Zabbix';
 grant all privileges on zabbix.* to 'zabbix'@'localhost';
 ```
-
+i
 `character set utf8 - support for multilingualism`
 `collate utf8_bin - case sensitiveness of stored data`
 
@@ -248,7 +248,7 @@ grant all privileges on zabbix.* to 'zabbix'@'localhost';
 ### Criar usuário zabbix permitindo a conexão através de um servidor remoto
 
 ```bash
-create user 'zabbix'@'10.0.0.51' identified with mysql_native_password by '2Maratona@Zabbix';
+create user 'zabbix'@'10.0.0.51' identified with mysql_native_password by 'Zabbix5@Zabbix';
 grant all privileges on zabbix.* to 'zabbix'@'10.0.0.51';
 UPDATE mysql.user SET Super_Priv='Y' WHERE user='zabbix' AND host='10.0.0.51';
 flush privileges;
