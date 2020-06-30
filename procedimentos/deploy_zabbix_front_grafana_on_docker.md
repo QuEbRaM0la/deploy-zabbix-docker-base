@@ -9,7 +9,6 @@
   - [Ajustes de S.O após a instalação](#ajustes-de-so-após-a-instalação)
     - [Verificar se é necessário atualização do S.O](#verificar-se-é-necessário-atualização-do-so)
     - [Instalar utilitários](#instalar-utilitários)
-    - [Instalar o GIT](#instalar-o-git)
   - [Instalando o Docker](#instalando-o-docker)
     - [Instalando repositório do docker](#instalando-repositório-do-docker)
     - [Removendo repositórios antigos](#removendo-repositórios-antigos)
@@ -17,8 +16,8 @@
     - [Instalando device mapper](#instalando-device-mapper)
     - [Instalando a ultima versão do Docker](#instalando-a-ultima-versão-do-docker)
     - [Inicializando o daemon do docker](#inicializando-o-daemon-do-docker)
-    - [Habilitar roteamento nos containers](#habilitar-roteamento-nos-containers)
     - [Verificando versão do docker](#verificando-versão-do-docker)
+    - [Habilitar roteamento nos containers](#habilitar-roteamento-nos-containers)
     - [Ativando modo swarm no host](#ativando-modo-swarm-no-host)
     - [Inspect de todas as redes do docker](#inspect-de-todas-as-redes-do-docker)
     - [Validando conflito de rede](#validando-conflito-de-rede)
@@ -31,6 +30,7 @@
     - [Criando rede para o nosso ambiente](#criando-rede-para-o-nosso-ambiente)
     - [Inspect de todas as redes do docker novamente](#inspect-de-todas-as-redes-do-docker-novamente)
   - [Deploy stack Zabbix](#deploy-stack-zabbix)
+    - [Instalar o GIT](#instalar-o-git)
     - [Clonando depositório](#clonando-depositório)
     - [Inicianlizando a stack](#inicianlizando-a-stack)
     - [Listando stacks disponiveis](#listando-stacks-disponiveis)
@@ -107,12 +107,6 @@ dnf check-update
 dnf install -y net-tools vim nano epel-release wget curl tcpdump
 ```
 
-### Instalar o GIT
-
-```bash
-dnf install -y git
-```
-
 ## Instalando o Docker
 
 ### Instalando repositório do docker
@@ -161,17 +155,17 @@ systemctl enable --now docker
 systemctl status docker
 ```
 
+### Verificando versão do docker
+
+```bash
+docker version
+```
+
 ### Habilitar roteamento nos containers
 
 ```bash
 firewall-cmd --zone=public --add-masquerade --permanent
 firewall-cmd --reload
-```
-
-### Verificando versão do docker
-
-```bash
-docker version
 ```
 
 ### Ativando modo swarm no host
@@ -275,6 +269,11 @@ for net in `docker network ls |grep -v NAME | awk '{print $2}'`;do ipam=`docker 
 
 ## Deploy stack Zabbix
 
+### Instalar o GIT
+
+```bash
+dnf install -y git
+```
 
 ### Clonando depositório
 

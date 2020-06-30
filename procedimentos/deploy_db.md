@@ -88,7 +88,7 @@ dnf check-update
 ### Instalar utilitários
 
 ```bash
-dnf install -y net-tools vim nano epel-release wget curl tcpdump
+dnf install -y net-tools vim nano epel-release wget curl tcpdump telnet
 ```
 
 ### Desabilitar SELINUX
